@@ -32,7 +32,7 @@ DRF_FCM = {
 
 2. http://localhost:8000/fcm/devices/ (GET)
 
-3. http://localhost:8000/fcm/devices/<pk>/ (GET | PUT)
+3. http://localhost:8000/fcm/devices/{pk}/ (GET | PUT)
 
 4. http://localhost:8000/fcm/send/ (POST)
 
