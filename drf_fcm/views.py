@@ -74,4 +74,8 @@ class FCMList(generics.CreateAPIView):
             fcm = FCMMessage()
             resp = fcm.send(serializer.data['sender'],
                             **serializer.data['data'])
-            return Response(status=resp.status_code)
+            try:
+                data = resp.json()
+            except ValueError:
+                data = resp.reason
+            return Response(status=resp.status_code, data=data)
