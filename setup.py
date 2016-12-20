@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='drf-fcm',
-      version='0.3',
+      version='0.1.0',
       description='Firebase Cloud Messaging Server in Django Rest FrameWork',
       packages=find_packages(),
       author='Naveen Subramani',
