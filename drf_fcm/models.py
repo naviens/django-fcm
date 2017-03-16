@@ -40,8 +40,8 @@ class Device(BaseModel):
                                  max_length=50)
     reg_id = models.CharField(verbose_name=_("GCM Registration id"),
                               max_length=255, unique=True)
-    is_active = models.BooleanField(default=False)
-    user = models.ForeignKey(AUTH_USER_MODEL)
+    is_active = models.BooleanField(default=True)
+    user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name=_("User"))
     objects = FCMDeviceManager()
 
     def __str__(self):

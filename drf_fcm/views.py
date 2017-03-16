@@ -23,9 +23,9 @@ class DeviceList(generics.ListCreateAPIView):
         return self.queryset
 
     def post(self, request, *args, **kwargs):
-        serializer = self.serializer_class(data=request.data)
+        serializer = self.serializer_class(data=request.data, context=self.request)
         if serializer.is_valid(raise_exception=True):
-            serializer.save()
+            serializer.save(user=self.request.user)
             return Response(
                 data=serializer.data,
                 status=status.HTTP_201_CREATED)

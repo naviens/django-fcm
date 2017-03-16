@@ -24,6 +24,12 @@ DRF_FCM = {
 }
 ```
 
+urls.py
+
+```python
+url(r'^fcm/', include('drf_fcm.urls')),
+```
+
 # Docs
 
 **Available Endpoints**:
@@ -49,8 +55,7 @@ Request Body:
 "name": "Lenovo Vibe",
 "device_id": "<IMEI>",
 "reg_id": "<gcm reg id>",
-"is_active": true,
-"user": 1
+"is_active": true
 }
 ```
 
@@ -69,14 +74,13 @@ Request Body:```
   previous: null,
   results: [
     {
-      id: 1,
-      created_at: "2016-10-26T14:00:50.422635Z",
-      updated_at: "2016-10-26T14:00:50.422664Z",
-      name: "Lenovo Vibe",
-      device_id: "123456789",
-      reg_id: "cOQHI1sddd:reg_id",
+      id: 2,
+      name: "My LG Optimus Black",
+      device_id: "naviensubramani@gmail.com",
+      reg_id: "12346767777",
       is_active: true,
-      user: 1
+      created_at: "2017-03-16T14:36:42.404759Z",
+      updated_at: "2017-03-16T14:36:42.404800Z"
     }
   ]
 }
