@@ -39,7 +39,7 @@ class Device(BaseModel):
     device_id = models.CharField(verbose_name=_("Device IMEI"),
                                  max_length=50)
     reg_id = models.CharField(verbose_name=_("GCM Registration id"),
-                              max_length=255, unique=True)
+                              max_length=255)
     is_active = models.BooleanField(default=True)
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name=_("User"))
     objects = FCMDeviceManager()
@@ -48,7 +48,7 @@ class Device(BaseModel):
         return self.device_id
 
     class Meta:
-        unique_together = (('user', 'device_id'),)
+        unique_together = (('user', 'device_id', 'reg_id'),)
 
     def send_message(self, data):
         if self.is_active:
