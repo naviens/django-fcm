@@ -48,7 +48,7 @@ class Device(BaseModel):
         return self.device_id
 
     class Meta:
-        unique_together = (('user', 'device_id', 'reg_id'),)
+        unique_together = (('user', 'device_id'),)
 
     def send_message(self, data):
         if self.is_active:

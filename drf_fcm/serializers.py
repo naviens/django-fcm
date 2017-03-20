@@ -16,10 +16,10 @@ class DeviceSerializer(serializers.ModelSerializer):
         'duplicate_device': 'This device is already registered in your account',
     }
 
-    def validate_device_id(self, value):
-        if self.Meta.model.objects.filter(device_id=value, user=self.context.user).exists():
+    def create(self, validated_data):
+        if self.Meta.model.objects.filter(device_id=validated_data.get('device_id'), user=self.context.user).exists():
             raise serializers.ValidationError(self.error_messages['duplicate_device'])
-        return value
+        return Device.objects.create(**validated_data)
 
     class Meta:
         model = Device
