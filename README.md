@@ -76,7 +76,7 @@ Request Body:```
     {
       id: 2,
       name: "My LG Optimus Black",
-      device_id: "naviensubramani@gmail.com",
+      device_id: "XXXXXXXXXXXXXX",
       reg_id: "12346767777",
       is_active: true,
       created_at: "2017-03-16T14:36:42.404759Z",
