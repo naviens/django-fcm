@@ -144,3 +144,4 @@ fabric.properties
 # *.ipr
 
 .idea
+.DS_Store

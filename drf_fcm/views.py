@@ -4,7 +4,7 @@ from rest_framework.exceptions import NotFound
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-import serializers
+from . import serializers
 from .fcm import FCMMessage
 from .settings import get_device_model
 

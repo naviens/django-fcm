@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-import views
+from . import views
 
 urlpatterns = (
     url(r'^devices/$', views.DeviceList.as_view(), name='device_list'),
